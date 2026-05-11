@@ -15,59 +15,97 @@
     .site-header { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(2px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #e2e8f0; }
     .header-container { max-width: 1400px; margin: 0 auto; padding: 0.8rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     .logo-area { display: flex; align-items: center; gap: 1rem; }
-    .navbar-profile-img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid #f59e0b; background: #fef3c7; }
-    .logo-text h1 { font-size: 1.35rem; font-weight: 800; }
-    .logo-text p { font-size: 0.7rem; color: #f59e0b; font-weight: 600; }
+    .navbar-profile-img { 
+        width: 80px; 
+        height: 80px; 
+        border-radius: 50%; 
+        object-fit: cover; 
+        object-position: center top; 
+        border: 3px solid #f59e0b; 
+        background: #fef3c7; 
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+    .navbar-profile-img:hover { transform: scale(1.05); }
+    .logo-text h1 { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #0f172a, #f59e0b); background-clip: text; -webkit-background-clip: text; color: transparent; }
+    .logo-text p { font-size: 0.75rem; color: #f59e0b; font-weight: 600; letter-spacing: 0.5px; }
     .nav-menu { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .nav-menu a { text-decoration: none; padding: 0.5rem 1.1rem; border-radius: 40px; font-weight: 600; font-size: 0.9rem; color: #1e293b; transition: all 0.2s; }
+    .nav-menu a { text-decoration: none; padding: 0.5rem 1.1rem; border-radius: 40px; font-weight: 600; font-size: 0.9rem; color: #1e293b; transition: all 0.3s; }
     .nav-menu a i { margin-right: 8px; }
-    .nav-menu a:hover, .nav-menu a.active { background: #f1f5f9; color: #f59e0b; }
+    .nav-menu a:hover, .nav-menu a.active { background: linear-gradient(135deg, #fef9e3, #f1f5f9); color: #f59e0b; transform: translateY(-2px); }
     .menu-toggle { display: none; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #0f172a; }
     .main-content { max-width: 1400px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
-    section { margin-bottom: 4rem; scroll-margin-top: 85px; }
-    .section-title { font-size: 2rem; font-weight: 800; margin-bottom: 1.8rem; position: relative; display: inline-block; }
-    .section-title:after { content: ''; position: absolute; bottom: -12px; left: 0; width: 60%; height: 4px; background: linear-gradient(90deg, #f59e0b, #3b82f6); border-radius: 4px; }
+    section { margin-bottom: 5rem; scroll-margin-top: 85px; }
+    .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 2rem; position: relative; display: inline-block; background: linear-gradient(135deg, #0f172a, #f59e0b); background-clip: text; -webkit-background-clip: text; color: transparent; }
+    .section-title:after { content: ''; position: absolute; bottom: -12px; left: 0; width: 70%; height: 4px; background: linear-gradient(90deg, #f59e0b, #3b82f6); border-radius: 4px; }
     .stats-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 2rem 0; }
-    .stat-card { background: white; border-radius: 2rem; padding: 1.2rem 2rem; flex: 1; min-width: 140px; text-align: center; border: 1px solid #eef2ff; }
+    .stat-card { background: white; border-radius: 2rem; padding: 1.2rem 2rem; flex: 1; min-width: 140px; text-align: center; border: 1px solid #eef2ff; transition: all 0.3s; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+    .stat-card:hover { transform: translateY(-5px); border-color: #f59e0b; box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1); }
     .stat-number { font-size: 2.4rem; font-weight: 800; color: #f59e0b; }
     .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
-    .info-card { background: white; padding: 1rem 1.2rem; border-radius: 1.5rem; border: 1px solid #e2e8f0; font-weight: 500; display: flex; align-items: center; gap: 0.75rem; transition: 0.2s; cursor: pointer; text-decoration: none; color: #0f172a; }
+    .info-card { background: white; padding: 1rem 1.2rem; border-radius: 1.5rem; border: 1px solid #e2e8f0; font-weight: 500; display: flex; align-items: center; gap: 0.75rem; transition: all 0.3s; cursor: pointer; text-decoration: none; color: #0f172a; }
     .info-card i { color: #f59e0b; width: 28px; font-size: 1.2rem; }
-    .info-card:hover { border-color: #f59e0b; background: #fffbeb; transform: translateY(-2px); }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; margin-top: 2rem; }
-    .project-card { background: white; border-radius: 1.5rem; overflow: hidden; border: 1px solid #eef2ff; transition: all 0.25s; }
-    .project-card:hover { transform: translateY(-5px); box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1); border-color: #f59e0b; }
-    .project-img { height: 160px; background: linear-gradient(135deg, #fef9e3, #e0f2fe); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #f59e0b; cursor: pointer; }
+    .info-card:hover { border-color: #f59e0b; background: linear-gradient(135deg, #fffbeb, #ffffff); transform: translateY(-3px); box-shadow: 0 10px 20px -8px rgba(0,0,0,0.1); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .project-card { background: white; border-radius: 1.5rem; overflow: hidden; border: 1px solid #eef2ff; transition: all 0.35s; }
+    .project-card:hover { transform: translateY(-8px); box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.15); border-color: #f59e0b; }
+    .project-img { height: 170px; background: linear-gradient(135deg, #fef9e3, #e0f2fe); display: flex; align-items: center; justify-content: center; font-size: 3.5rem; color: #f59e0b; cursor: pointer; transition: transform 0.3s; }
+    .project-img:hover { transform: scale(1.02); }
     .project-content { padding: 1.2rem; }
-    .project-content h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
-    .project-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.8rem; color: #2563eb; font-weight: 600; text-decoration: none; }
-    .services-flex { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-    .service-item { background: white; border-radius: 1.5rem; padding: 1.5rem; border: 1px solid #eef2ff; transition: 0.2s; cursor: pointer; }
-    .service-item:hover { border-color: #f59e0b; transform: translateY(-3px); }
-    .service-icon { width: 55px; height: 55px; background: #fef9e3; border-radius: 1rem; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #f59e0b; margin-bottom: 1rem; }
-    .contact-section { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; background: white; border-radius: 2rem; padding: 2rem; border: 1px solid #eef2ff; }
+    .project-content h3 { font-size: 1.35rem; margin-bottom: 0.4rem; font-weight: 700; }
+    .project-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.8rem; color: #f59e0b; font-weight: 700; text-decoration: none; transition: gap 0.3s; }
+    .project-link:hover { gap: 0.8rem; color: #d97706; }
+    .services-flex { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; margin: 2rem 0; }
+    .service-item { background: white; border-radius: 1.5rem; padding: 1.8rem; border: 1px solid #eef2ff; transition: all 0.35s; cursor: pointer; position: relative; overflow: hidden; }
+    .service-item::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #f59e0b, #3b82f6); transform: scaleX(0); transition: transform 0.4s; }
+    .service-item:hover::before { transform: scaleX(1); }
+    .service-item:hover { border-color: #f59e0b; transform: translateY(-5px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12); }
+    .service-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #fef9e3, #fff7ed); border-radius: 1.2rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #f59e0b; margin-bottom: 1.2rem; transition: transform 0.3s; }
+    .service-item:hover .service-icon { transform: rotateY(180deg); }
+    .contact-section { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; background: white; border-radius: 2rem; padding: 2rem; border: 1px solid #eef2ff; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); }
     .contact-info p { margin: 1.2rem 0; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-    .contact-info i { width: 28px; font-size: 1.2rem; color: #f59e0b; }
-    .contact-info a { color: #0f172a; text-decoration: none; font-weight: 500; border-bottom: 1px dashed #cbd5e1; }
-    .contact-info a:hover { color: #f59e0b; }
+    .contact-info i { width: 32px; font-size: 1.3rem; color: #f59e0b; }
+    .contact-info a { color: #0f172a; text-decoration: none; font-weight: 500; border-bottom: 1px dashed #cbd5e1; transition: color 0.3s; }
+    .contact-info a:hover { color: #f59e0b; border-bottom-color: #f59e0b; }
     .social-links { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
-    .social-link { display: inline-flex; background: #f1f5f9; width: 48px; height: 48px; border-radius: 50%; align-items: center; justify-content: center; color: #1e293b; transition: 0.2s; text-decoration: none; font-size: 1.4rem; }
-    .social-link:hover { background: #f59e0b; color: white; transform: translateY(-3px); }
-    .contact-form input, .contact-form textarea { width: 100%; padding: 0.9rem; margin-bottom: 1rem; border: 1px solid #e2e8f0; border-radius: 1rem; background: #f9fafb; }
-    .contact-form input:focus, .contact-form textarea:focus { border-color: #f59e0b; outline: none; background: white; }
-    .btn-submit { background: #0f172a; color: white; border: none; padding: 0.8rem 1.8rem; border-radius: 2rem; font-weight: 600; cursor: pointer; transition: 0.2s; }
-    .btn-submit:hover { background: #f59e0b; color: #0f172a; }
-    .cv-btn { background: #f59e0b; color: #0f172a; border: none; padding: 0.7rem 1.5rem; border-radius: 2rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
-    footer { text-align: center; padding: 2rem 0; border-top: 1px solid #e2e8f0; margin-top: 2rem; font-size: 0.9rem; }
-    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25D366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); z-index: 99; text-decoration: none; }
-    .whatsapp-float:hover { transform: scale(1.08); background: #20b359; }
-    .hero-square-img { width: 340px; height: 340px; object-fit: cover; border-radius: 32px; box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.25); border: 4px solid white; }
-    .mark-bg { background: #fef9c3; padding: 0.1rem 0.4rem; border-radius: 12px; font-weight: 600; }
-    .typing { color: #f59e0b; font-weight: 700; border-right: 2px solid #f59e0b; padding-right: 5px; animation: blink 0.7s infinite; }
+    .social-link { display: inline-flex; background: linear-gradient(135deg, #f1f5f9, #ffffff); width: 48px; height: 48px; border-radius: 50%; align-items: center; justify-content: center; color: #1e293b; transition: all 0.3s; text-decoration: none; font-size: 1.4rem; border: 1px solid #e2e8f0; }
+    .social-link:hover { background: #f59e0b; color: white; transform: translateY(-5px) rotate(360deg); border-color: #f59e0b; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 1rem; margin-bottom: 1rem; border: 2px solid #e2e8f0; border-radius: 1rem; background: #f9fafb; transition: all 0.3s; }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: #f59e0b; outline: none; background: white; box-shadow: 0 0 0 3px rgba(245,158,11,0.1); }
+    .btn-submit { background: linear-gradient(135deg, #0f172a, #1e293b); color: white; border: none; padding: 0.9rem 2rem; border-radius: 2rem; font-weight: 700; cursor: pointer; transition: all 0.3s; }
+    .btn-submit:hover { background: linear-gradient(135deg, #f59e0b, #d97706); color: #0f172a; transform: translateY(-2px); box-shadow: 0 10px 20px -8px rgba(245,158,11,0.4); }
+    .cv-btn { background: linear-gradient(135deg, #f59e0b, #d97706); color: #0f172a; border: none; padding: 0.7rem 1.5rem; border-radius: 2rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; transition: all 0.3s; }
+    .cv-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -8px rgba(245,158,11,0.4); gap: 12px; }
+    footer { text-align: center; padding: 2rem 0; border-top: 1px solid #e2e8f0; margin-top: 2rem; font-size: 0.9rem; color: #64748b; }
+    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25D366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); z-index: 99; text-decoration: none; transition: all 0.3s; }
+    .whatsapp-float:hover { transform: scale(1.1) rotate(360deg); background: #20b359; }
+    .hero-square-img { 
+        width: 420px; 
+        height: 420px; 
+        object-fit: cover; 
+        object-position: center top; 
+        border-radius: 36px; 
+        box-shadow: 0 30px 45px -12px rgba(0, 0, 0, 0.3); 
+        border: 5px solid white;
+        transition: transform 0.4s;
+        cursor: pointer;
+    }
+    .hero-square-img:hover { transform: scale(1.02) rotate(1deg); }
+    .mark-bg { background: linear-gradient(135deg, #fef9c3, #fde047); padding: 0.2rem 0.6rem; border-radius: 20px; font-weight: 700; color: #854d0e; }
+    .typing { color: #f59e0b; font-weight: 800; border-right: 3px solid #f59e0b; padding-right: 5px; animation: blink 0.7s infinite; min-height: 1.2em; display: inline-block; }
     @keyframes blink { 0%, 100% { border-color: #f59e0b; } 50% { border-color: transparent; } }
     .status-msg { margin-top: 12px; font-size: 0.85rem; font-weight: 500; }
     .status-success { color: #10b981; }
     .status-error { color: #ef4444; }
+    
+    /* Image Zoom Lightbox Enhanced */
+    .image-zoom-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.96); z-index: 2000; justify-content: center; align-items: center; cursor: zoom-out; backdrop-filter: blur(10px); }
+    .image-zoom-overlay.active { display: flex; }
+    .image-zoom-img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 16px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); animation: zoomIn 0.3s ease; }
+    @keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .image-zoom-close { position: absolute; top: 30px; right: 50px; color: white; font-size: 50px; font-weight: bold; cursor: pointer; transition: 0.2s; z-index: 2001; }
+    .image-zoom-close:hover { color: #f59e0b; transform: scale(1.1); }
+    
     .lightbox-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); z-index: 1000; justify-content: center; align-items: center; flex-direction: column; }
     .lightbox-overlay.active { display: flex; }
     .lightbox-image { max-width: 90%; max-height: 80%; object-fit: contain; border-radius: 12px; }
@@ -79,22 +117,24 @@
     .lightbox-prev:hover, .lightbox-next:hover { background: #f59e0b; color: white; }
     .lightbox-caption { color: white; margin-top: 15px; font-size: 16px; text-align: center; }
     .lightbox-counter { color: rgba(255, 255, 255, 0.7); font-size: 14px; margin-top: 10px; }
+    
     @media (max-width: 768px) {
       .menu-toggle { display: block; }
-      .nav-menu { display: none; width: 100%; flex-direction: column; background: white; padding: 1rem; border-radius: 1.5rem; margin-top: 0.5rem; }
+      .nav-menu { display: none; width: 100%; flex-direction: column; background: white; padding: 1rem; border-radius: 1.5rem; margin-top: 0.5rem; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
       .nav-menu.open { display: flex; }
       .contact-section { grid-template-columns: 1fr; }
-      .hero-square-img { width: 260px; height: 260px; }
+      .hero-square-img { width: 320px; height: 320px; }
+      .navbar-profile-img { width: 70px; height: 70px; }
       .stat-card { padding: 0.8rem 1rem; }
       .stat-number { font-size: 1.8rem; }
-      .section-title { font-size: 1.6rem; }
+      .section-title { font-size: 1.8rem; }
     }
     @media (max-width: 480px) {
-      .logo-text h1 { font-size: 1.1rem; }
-      .navbar-profile-img { width: 40px; height: 40px; }
-      .hero-square-img { width: 200px; height: 200px; }
+      .logo-text h1 { font-size: 1.2rem; }
+      .navbar-profile-img { width: 60px; height: 60px; }
+      .hero-square-img { width: 260px; height: 260px; border-radius: 28px; }
       .main-content { padding: 1.5rem 1rem; }
-      .stat-number { font-size: 1.5rem; }
+      .stat-number { font-size: 1.4rem; }
     }
     .hero-flex { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2.5rem; }
   </style>
@@ -104,7 +144,7 @@
   <header class="site-header">
     <div class="header-container">
       <div class="logo-area">
-        <img src="images/Ahmed.png" alt="Muhammad Ahmad" class="navbar-profile-img" onerror="this.src='https://ui-avatars.com/api/?name=M+Ahmad&background=f59e0b&color=fff&rounded=true&size=52';">
+        <img src="images/ahmedd.png" alt="Muhammad Ahmad" class="navbar-profile-img" id="navbarProfileImg" onerror="this.src='https://ui-avatars.com/api/?name=M+Ahmad&background=f59e0b&color=fff&rounded=true&size=80';">
         <div class="logo-text">
           <h1>Muhammad Ahmad</h1>
           <p>SEO Expert | Instructor</p>
@@ -125,11 +165,11 @@
     <section id="home">
       <div class="hero-flex">
         <div style="flex:1.2">
-          <h1 style="font-size:3rem; margin: 0.5rem 0; font-weight:800;">Muhammad Ahmad</h1>
+          <h1 style="font-size:3rem; margin: 0.5rem 0; font-weight:800; background: linear-gradient(135deg, #0f172a, #f59e0b); background-clip: text; -webkit-background-clip: text; color: transparent;">Muhammad Ahmad</h1>
           <h2 style="font-size:1.7rem; font-weight:600; margin-bottom:1rem;">I'm a <span class="typing" id="dynamicTyping"></span></h2>
-          <p style="margin:1.2rem 0; color:#334155; max-width:550px;">Accomplished SEO expert with 5+ years, <span class="mark-bg">90+ successful projects</span>, driving digital growth.</p>
+          <p style="margin:1.2rem 0; color:#334155; max-width:550px; line-height:1.6;">Accomplished SEO expert with 5+ years, <span class="mark-bg">90+ successful projects</span>, driving digital growth through data-driven strategies.</p>
           <div style="display: flex; gap: 1rem; flex-wrap:wrap;">
-            <a href="#contact" class="btn-submit clickable-item" style="background:#f59e0b;"><i class="fas fa-paper-plane"></i> Hire Me →</a>
+            <a href="#contact" class="btn-submit clickable-item" style="background:linear-gradient(135deg, #f59e0b, #d97706); color:#0f172a;"><i class="fas fa-paper-plane"></i> Hire Me →</a>
             <a href="#" id="downloadCVBtn" class="cv-btn clickable-item"><i class="fas fa-download"></i> View CV</a>
           </div>
           <div class="stats-grid">
@@ -140,14 +180,14 @@
           </div>
         </div>
         <div style="flex:0.9; display: flex; justify-content: center;">
-          <img src="images/Ahmed.png" alt="Muhammad Ahmad" class="hero-square-img" onerror="this.src='https://ui-avatars.com/api/?name=Muhammad+Ahmad&background=f59e0b&color=fff&size=340&bold=true';">
+          <img src="images/ahmedd.png" alt="Muhammad Ahmad" class="hero-square-img" id="heroProfileImg" onerror="this.src='https://ui-avatars.com/api/?name=Muhammad+Ahmad&background=f59e0b&color=fff&size=420&bold=true';">
         </div>
       </div>
     </section>
 
     <section id="about">
       <h2 class="section-title">About Me</h2>
-      <div style="background:white; border-radius:2rem; padding:2rem; border:1px solid #eef2ff;">
+      <div style="background:white; border-radius:2rem; padding:2rem; border:1px solid #eef2ff; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);">
         <p style="line-height:1.7; margin-bottom:1.2rem;">I am <strong>Muhammad Ahmad</strong>, an accomplished SEO expert at <strong>i-Lab Solution</strong> with over 5 years of professional experience in search engine optimization, branding, and blogging. Throughout my career, I have successfully managed and ranked <strong class="mark-bg">80+ projects</strong>, helping businesses enhance their online visibility and achieve measurable digital growth.</p>
         <p style="line-height:1.7; margin-bottom:1.2rem;">Available as a freelancer since <strong>2021</strong>.</p>
         <div class="info-grid">
@@ -168,7 +208,7 @@
         <div class="project-card"><div class="project-img"><i class="fas fa-flask fa-3x"></i></div><div class="project-content"><h3>Buy Research Chemicals</h3><a href="https://buyresearchchemicalsusa.com/" target="_blank" class="project-link">Visit →</a></div></div>
         <div class="project-card"><div class="project-img"><i class="fas fa-building fa-3x"></i></div><div class="project-content"><h3>Build KSA</h3><a href="https://bulid-ksa.com/" target="_blank" class="project-link">Visit →</a></div></div>
         <div class="project-card"><div class="project-img"><i class="fas fa-paint-roller fa-3x"></i></div><div class="project-content"><h3>Dubai Painting Services</h3><a href="https://dubaipaintingservices.org/" target="_blank" class="project-link">Visit →</a></div></div>
-        <div class="project-card project-meta" data-project-images='["images/Meta 1.PNG","images/Meta 2.PNG"]' data-project-title="Meta Campaigns Performance"><div class="project-img"><i class="fas fa-chart-line fa-3x"></i></div><div class="project-content"><h3>Meta Campaigns</h3><p>Facebook & Instagram ads management</p><a href="#" class="project-link meta-link">Visit →</a></div></div>
+        <div class="project-card project-meta" data-project-images='["images/Meta 1.PNG","images/Meta 2.PNG"]' data-project-title="Meta Campaigns Performance"><div class="project-img"><i class="fas fa-chart-line fa-3x"></i></div><div class="project-content"><h3>Meta Campaigns</h3><p>Facebook & Instagram ads management</p><a href="#" class="project-link meta-link">View Insights →</a></div></div>
       </div>
     </section>
 
@@ -188,7 +228,7 @@
       <h2 class="section-title">Get In Touch</h2>
       <div class="contact-section">
         <div class="contact-info">
-          <h3>Let's grow your business 🚀</h3>
+          <h3 style="font-size:1.5rem;">Let's grow your business 🚀</h3>
           <p><i class="fas fa-map-marker-alt"></i> <strong>Sahiwal, Pakistan</strong></p>
           <p><i class="fas fa-envelope"></i> <a href="mailto:ranamahmad655@gmail.com">ranamahmad655@gmail.com</a></p>
           <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/qr/PZX44WLANZDSL1" target="_blank">Click to chat</a></p>
@@ -201,7 +241,7 @@
           <p style="margin-top:1.5rem;">🔹 Freelance worldwide since 2021</p>
         </div>
         <div class="contact-form">
-          <h3>Send Message</h3>
+          <h3 style="font-size:1.3rem;">Send Message</h3>
           <form id="contactForm">
             <input type="text" id="name" placeholder="Full Name" required>
             <input type="email" id="email" placeholder="Email Address" required>
@@ -216,6 +256,12 @@
   </main>
 
   <a href="https://wa.me/qr/PZX44WLANZDSL1" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+  <!-- Image Zoom Overlay for Profile Images -->
+  <div id="imageZoomOverlay" class="image-zoom-overlay">
+    <span class="image-zoom-close">&times;</span>
+    <img class="image-zoom-img" id="imageZoomImg" alt="Zoomed Image">
+  </div>
 
   <div id="lightboxOverlay" class="lightbox-overlay">
     <span class="lightbox-close">&times;</span>
@@ -249,6 +295,30 @@
       }
       typeFn();
 
+      // Image Zoom Feature for Profile Images
+      const zoomOverlay = document.getElementById('imageZoomOverlay');
+      const zoomImg = document.getElementById('imageZoomImg');
+      const zoomClose = document.querySelector('.image-zoom-close');
+      
+      function openZoom(imageSrc) {
+        zoomImg.src = imageSrc;
+        zoomOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeZoom() {
+        zoomOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      const navbarImg = document.getElementById('navbarProfileImg');
+      const heroImg = document.getElementById('heroProfileImg');
+      
+      if (navbarImg) navbarImg.addEventListener('click', () => openZoom(navbarImg.src));
+      if (heroImg) heroImg.addEventListener('click', () => openZoom(heroImg.src));
+      if (zoomClose) zoomClose.onclick = closeZoom;
+      zoomOverlay.onclick = (e) => { if (e.target === zoomOverlay) closeZoom(); };
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && zoomOverlay.classList.contains('active')) closeZoom(); });
+
       // Mobile Menu
       const toggle = document.getElementById("mobileMenuBtn");
       const menu = document.getElementById("navMenu");
@@ -267,65 +337,37 @@
         URL.revokeObjectURL(a.href);
       });
 
-      // ===== EMAILJS CONTACT FORM - UPDATED WITH NEW SERVICE ID =====
-      // ✅ Updated Credentials
+      // EmailJS
       const EMAILJS_PUBLIC_KEY = "i3VBTM0Q-BjefKbOw";
-      const EMAILJS_SERVICE_ID = "service_nqcc4rv";  // ✅ NAYI SERVICE ID
-      const EMAILJS_TEMPLATE_ID = "template_ggnub4q";  // ✅ Your Template ID
-      
+      const EMAILJS_SERVICE_ID = "service_nqcc4rv";
+      const EMAILJS_TEMPLATE_ID = "template_ggnub4q";
       emailjs.init(EMAILJS_PUBLIC_KEY);
       
       const form = document.getElementById("contactForm");
       const statusDiv = document.getElementById("formStatus");
-      
       if (form) {
         form.addEventListener("submit", function(e) {
           e.preventDefault();
-          
           const name = document.getElementById("name").value.trim();
           const email = document.getElementById("email").value.trim();
           const message = document.getElementById("message").value.trim();
-          
           if (!name || !email || !message) {
             statusDiv.innerHTML = '<span class="status-error">❌ Please fill all fields</span>';
             setTimeout(() => statusDiv.innerHTML = '', 3000);
             return;
           }
-          
-          if (!email.includes('@') || !email.includes('.')) {
-            statusDiv.innerHTML = '<span class="status-error">❌ Please enter a valid email address</span>';
-            setTimeout(() => statusDiv.innerHTML = '', 3000);
-            return;
-          }
-          
           const btn = form.querySelector('button[type="submit"]');
           const originalText = btn.innerText;
           btn.disabled = true;
           btn.innerText = "Sending...";
-          
-          emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-            name: name,
-            email: email,
-            message: message
-          })
-          .then(function(response) {
-            statusDiv.innerHTML = '<span class="status-success">✅ Message sent successfully! I will contact you soon.</span>';
-            form.reset();
-            setTimeout(() => statusDiv.innerHTML = '', 5000);
-          })
-          .catch(function(error) {
-            console.error("EmailJS Error:", error);
-            statusDiv.innerHTML = '<span class="status-error">❌ Failed to send. Please email me directly at ranamahmad655@gmail.com</span>';
-            setTimeout(() => statusDiv.innerHTML = '', 5000);
-          })
-          .finally(function() {
-            btn.disabled = false;
-            btn.innerText = originalText;
-          });
+          emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, { name, email, message })
+            .then(() => { statusDiv.innerHTML = '<span class="status-success">✅ Message sent successfully!</span>'; form.reset(); })
+            .catch(() => { statusDiv.innerHTML = '<span class="status-error">❌ Failed. Email directly at ranamahmad655@gmail.com</span>'; })
+            .finally(() => { btn.disabled = false; btn.innerText = originalText; setTimeout(() => statusDiv.innerHTML = '', 5000); });
         });
       }
 
-      // Active Nav Highlight
+      // Active Nav
       const sections = document.querySelectorAll("section");
       window.addEventListener("scroll", () => {
         let cur = "";
@@ -336,7 +378,7 @@
         });
       });
 
-      // Lightbox
+      // Lightbox for services & projects
       const lightbox = {
         overlay: document.getElementById('lightboxOverlay'),
         image: document.getElementById('lightboxImage'),
@@ -366,6 +408,7 @@
         if (e.key === 'ArrowLeft') lightbox.prev();
         if (e.key === 'ArrowRight') lightbox.next();
       });
+      
       document.querySelectorAll('.service-item').forEach(item => {
         item.addEventListener('click', (e) => {
           e.stopPropagation();
@@ -374,6 +417,7 @@
           if (imagesAttr) { try { lightbox.open(JSON.parse(imagesAttr), title); } catch(er){} }
         });
       });
+      
       const metaProject = document.querySelector('.project-meta');
       if (metaProject) {
         const openMeta = (e) => { e.preventDefault(); e.stopPropagation(); const imgs = metaProject.getAttribute('data-project-images'); const title = metaProject.getAttribute('data-project-title'); if(imgs){ try{ lightbox.open(JSON.parse(imgs), title); }catch(er){} } };
